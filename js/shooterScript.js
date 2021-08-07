@@ -2,6 +2,10 @@ var canvas = document.getElementById("can");
 var scoreP = document.getElementById("score");
 var ctx = canvas.getContext("2d");
 
+var audioAll = document.getElementsByClassName("myAudio");
+
+audioAll.volume = 0.5;
+
 var bx;
 var by;
 var ax = 100;
@@ -27,6 +31,17 @@ var pressedLeft = false;
 var pressedUp = false;
 var pressedDown = false;
 var pressedSpace = false;
+var timerEnemy = 20;
+var timerEnemyS = timerEnemy;
+
+var audioShot = document.getElementById("shot");
+var audioShotE = document.getElementById("shotE");
+var audioDeath = document.getElementById("dead");
+var audioLose =  document.getElementById("lose");
+var audioWin =  document.getElementById("win");
+var audioHit =  document.getElementById("hit");
+
+
 
 document.addEventListener("keydown", keyDown, false);
 document.addEventListener("keyup", keyUp, false);
@@ -198,9 +213,49 @@ var bullet = {
   }
 };
 
+var bulletEnemy = {
+  x: 1000,
+  y: 1000,
+  dx: 0.0,
+  dy: 0.0,
+  radius: 2.0,
+
+  tick: function () {
+    this.x += this.dx;
+    this.y += this.dy;
+
+    if (this.x + this.radius < 0.0
+      || this.x - this.radius > canvas.width
+      || this.y + this.radius < 0.0
+      || this.y - this.radius > canvas.height) {
+      this.dx = 0.0;
+      this.dy = 0.0;
+    }
+  },
+
+  render: function () {
+    ctx.fillStyle = "#003f3f";
+    ctx.strokeStyle = "#d80000";
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0.0, 2.0 * Math.PI, false);
+    ctx.fill();
+    ctx.stroke();
+  }
+};
+
 function draw() {
-  console.log("ex " + ex);
-  console.log("ey " + ey);
+  
+
+
+  if(timerEnemy > 0){
+    timerEnemy -= 0.2;
+  }
+  
+  if(timerEnemy <= 0){
+    enemyShot();
+    timerEnemy = timerEnemyS;
+  }
+
   if (pressedRight) {
     ax -= 3;
   }
@@ -227,6 +282,8 @@ function draw() {
   drawCircle(100, 100, '#63fc5e');
   bullet.tick();
   bullet.render();
+  bulletEnemy.tick();
+  bulletEnemy.render();
   player.drawLine(ax, ay, angle, 'red');
   player.draw(ax, ay, angle, 'black');
   player.drawCircle(ax, ay, 'green');
@@ -248,13 +305,16 @@ function draw() {
     var hited = true;
     if (true) {
       score++;
-      speed += 0.15;
+      speed += 0.1;
       hited = false;
+      timerEnemy = timerEnemyS;
+      audioHit.play();
     }
 
   }
 
   if (score == 100) {
+    audioWin.play();
     alert("YOU WIN");
     ax = 100;
     ay = 100;
@@ -275,9 +335,13 @@ function draw() {
     pressedUp = false;
     pressedDown = false;
     pressedSpace = false;
+    timerEnemy = timerEnemyS;
+    
   }
 
   if (((ax - ex) <= 1) && ((ax - ex) >= -1) && ((ay - ey) <= 1) && ((ay - ey) >= -1)) {
+    audioDeath.play();
+    audioLose.play();
     alert("YOU DEAD");
     ax = 100;
     ay = 100;
@@ -298,9 +362,64 @@ function draw() {
     pressedUp = false;
     pressedDown = false;
     pressedSpace = false;
+    timerEnemy = timerEnemyS;
+    
+  }
+
+  if ((((bulletEnemy.x - ax) <= 6) && ((bulletEnemy.x - ax) >= -6)) && (((bulletEnemy.y - ay) <= 6) && ((bulletEnemy.y - ay) >= -6))) {
+    audioDeath.play();
+    audioLose.play();
+    alert("YOU DEAD");
+    ax = 100;
+    ay = 100;
+    test = rand(100);
+    if (test % 2 == 0) {
+      ex = getRandomArbitrary(-70, canvas.width + 70);
+      ey = getRandomArbitrary1(-70, canvas.height + 70);
+    }
+    else {
+      ex = getRandomArbitrary1(-70, canvas.width + 70);
+      ey = getRandomArbitrary(-70, canvas.height + 70);
+    }
+    score = 0;
+    speed = 2;
+    pressedMouse = false;
+    pressedRight = false;
+    pressedLeft = false;
+    pressedUp = false;
+    pressedDown = false;
+    pressedSpace = false;
+    timerEnemy = timerEnemyS;
+    
   }
 
   scoreP.innerHTML = "score is " + score;
+}
+
+
+
+function enemyShot() {
+  
+  var x = ax - ex;
+  var y = ay - ey;
+  var angle = Math.atan2(ay - ey, ax - ex);
+  if (angle < 0) angle += 2 * Math.PI;
+  // Using pythagoras' theorm to find the distance (the length of the vector)
+  var l = Math.sqrt(x * x + y * y);
+
+  // Dividing by the distance gives a normalized vector whose length is 1
+  x = x / l;
+  y = y / l;
+
+  // Reset bullet position
+  bulletEnemy.x = ex;
+  bulletEnemy.y = ey;
+
+
+  // Get the bullet to travel towards the mouse pos with a new speed of 10.0 (you can change this)
+  bulletEnemy.dx = x * 10.0;
+  bulletEnemy.dy = y * 10.0;
+  audioShotE.play();
 }
 
 window.onmousedown = function (e) {
@@ -325,6 +444,7 @@ window.onmousedown = function (e) {
   // Get the bullet to travel towards the mouse pos with a new speed of 10.0 (you can change this)
   bullet.dx = x * 10.0;
   bullet.dy = y * 10.0;
+  audioShot.play();
 }
 
 
