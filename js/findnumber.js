@@ -38,7 +38,7 @@ function init() {
     menubar.classList.add('display-flex');
     var currentLevel = 1;
     var currentChoiseNum;
-    var currentTime = 120;
+    var currentTime = 60;
     var currentScore = 0;
     var currentMult = 1;
 
