@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Найди число</title>
+    <link rel="stylesheet" href="/css/findnumber.css" />
+  </head>
+  <body>
+    <div id="container" class="back-color-violet">
+      <div id="start-menu"><button id="start-but" onclick="countStart()">START</button></div>
+      <div id="end-menu" class="display-none"><div id="cont-end"><div id="score-end">1000 очков</div><button id="again-but" onclick="countStart()">Снова</button></div></div>
+      <div id="menu-bar" class="display-none">
+        <div id="time-con"><div class="lable">ВРЕМЯ</div><div id="time" class="countPar">00:00</div></div>
+        <div id="level-con"><div class="lable">УРОВЕНЬ</div><div id="level" class="countPar">1-9</div></div>
+        <div id="score-con"><div class="lable">ОЧКИ</div><div id="score" class="countPar">1000</div></div>
+        <div id="mult-con"><div class="lable">УВЕЛИЧЕНИЕ</div><div id="mult" class="countPar">x1</div></div>
+      </div>
+      <div id="task-bar">
+        <div class="text">Найдите указанное число</div>
+        <div id="task-num" class="anim-in">75</div>
+      </div>
+      <div id="container-bar-wrapper" class="anim-in">
+        <div class="container-bar">
+          <button class="button-number button-color-inh">1</button>
+          <button class="button-number button-color-orange">2</button>
+          <button class="button-number button-color-pink">3</button>
+          <button class="button-number button-color-orange">2</button>
+          <button class="button-number button-color-yellow">3</button>
+        </div>
+        <div class="container-bar">
+          <button class="button-number">4</button>
+          <button class="button-number button-color-pink">5</button>
+          <button class="button-number button-color-inh">6</button>
+          <button class="button-number button-color-yellow">2</button>
+          <button class="button-number button-color-pink">3</button>
+        </div>
+        <div class="container-bar">
+          <button class="button-number button-color-inh">1</button>
+          <button class="button-number button-color-yellow">2</button>
+          <button class="button-number button-color-orange">3</button>
+          <button class="button-number button-color-yellow">2</button>
+          <button class="button-number button-color-pink">3</button>
+        </div>
+        <div class="container-bar">
+          <button class="button-number button-color-inh">7</button>
+          <button class="button-number button-color-inh">8</button>
+          <button class="button-number button-color-yellow">2</button>
+          <button class="button-number button-color-pink">3</button>
+          <button class="button-number button-color-orange">9</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/findnumber.js"></script>
+  </body>
+</html>
