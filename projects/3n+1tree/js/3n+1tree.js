@@ -19,6 +19,9 @@ function init() {
     var color31 = 242, switch31 = 1;
     var color32 = 191, switch32 = 1;
     var color33 = 232, switch33 = -1;
+    var color41 = 9, switch41 = 5;
+    var color42 = 236, switch42 = 2;
+    var color43 = 179, switch43 = 1;
     var firstNum = document.getElementById('first-num').value;
     var secondNum = document.getElementById('second-num').value;
     var angleChetFirst = document.getElementById('angle-chet-first').value;
@@ -34,7 +37,6 @@ function init() {
     var angleChet;
     var angleNechet;
     var time = 1000 / 30;
-    var count = 0;
 
     function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -70,8 +72,9 @@ function init() {
         let y1 = y - minusY;
         let width = 7;
         let minusWidth = 0.3;
+        let colorBranch = 'rgba(' + color41 + ',' + color42 + ',' + color43 + ', 0.6)';
         ctx.lineWidth = width;
-        ctx.strokeStyle = "#3b3b3b67";
+        ctx.strokeStyle = colorBranch;
         ctx.beginPath();
         ctx.lineTo(x, y);
         ctx.lineTo(x1, y1);
@@ -125,9 +128,18 @@ function init() {
                     console.log("Done!");
                 }
             }
-            
 
-           
+
+
+        }
+        if (color41 + 1 > 255) {
+            switch41 *= -1;
+        }
+        if (color42 + 1 > 255) {
+            switch42 *= -1;
+        }
+        if (color43 + 1 > 255) {
+            switch43 *= -1;
         }
         if (color11 + 1 > 255) {
             switch11 *= -1;
@@ -157,6 +169,15 @@ function init() {
             switch33 *= -1;
         }
 
+        if (color41 - 1 < 0) {
+            switch41 *= -1;
+        }
+        if (color42 - 1 < 0) {
+            switch42 *= -1;
+        }
+        if (color43 - 1 < 0) {
+            switch43 *= -1;
+        }
         if (color11 - 1 < 50) {
             switch11 *= -1;
         }
@@ -184,7 +205,7 @@ function init() {
         if (color33 - 1 < 80) {
             switch33 *= -1;
         }
-        if(degGrad + 1>360){
+        if (degGrad + 1 > 360) {
             degGrad = 0;
         }
 
@@ -198,6 +219,9 @@ function init() {
         color31 += switch31;
         color32 += switch32;
         color33 += switch33;
+        color41 += switch41;
+        color42 += switch42;
+        color43 += switch43;
         let color = 'linear-gradient(' + degGrad + 'deg, rgb(' + color11 + ',' + color12 + ',' + color13 + ') 0%, rgb(' + color31 + ',' + color22 + ',' + color23 + ') 12%, rgb(' + color31 + ',' + color32 + ',' + color33 + ') 93%)';
         canvas.style.backgroundImage = color;
     }
