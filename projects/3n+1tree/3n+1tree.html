@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3n+1</title>
+    <link rel="stylesheet" href="css/3n+1tree.css" />
+  </head>
+  <body>
+    <div id="content" class="display-flex">
+      <div id="start-menu" class="display-flex">
+        <div id="inputs">
+          <div id="first-num-div">
+            <p>Введите первое число из диапозона:</p>
+            <input type="number" id="first-num" value="10" />
+          </div>
+          <div id="second-num-div">
+            <p>Введите второе число из диапозона:</p>
+            <input type="number" id="second-num" value="3765" />
+          </div>
+          <div id="angle-chet-div">
+            <p>Первое число для диапозона четных углов:</p>
+            <input type="number" id="angle-chet-first" value="15" />
+            <p>Второе число для диапозона четных углов:</p>
+            <input type="number" id="angle-chet-second" value="15" />
+          </div>
+          <div id="angle-nechet-div">
+            <p>Первое число для диапозона нечетных углов:</p>
+            <input type="number" id="angle-nechet-first" value="-25" />
+            <p>Второе число для диапозона нечетных углов:</p>
+            <input type="number" id="angle-nechet-second" value="-25" />
+          </div>
+          <div class="but display-flex">
+            <button id="start" onclick="init()">Начать строить граф</button>
+          </div>
+        </div>
+        <div id="t">
+            <p>Изначально стоят значения для получения красивого дерева,</p>
+        <br>
+        <p>но если хочется можно изменить эти значения и получить</p>
+        <br>
+        <p>свое дерево)</p>
+        </div>
+        
+      </div>
+    </div>
+    <canvas id="can" width="3000" height="900" class="display-none"></canvas>
+
+    <script src="js/3n+1tree.js"></script>
+  </body>
+</html>
