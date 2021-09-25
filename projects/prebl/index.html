@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/loman.css" />
+    <title>Ломаная</title>
+  </head>
+  <body>
+    <canvas id="can" z-index="-1000"> </canvas>
+    <div id="contanier" class="out">
+      <div id="wrapper">
+        <p>Введите диапозон чисел:</p>
+        <div id="inputs1"><input type="number" id="a1" placeholder=" a = -5" onblur="applySetting()"/><input type="number" id="b1" placeholder=" b = 3" onblur="applySetting()"></div>
+        <p>Введите эпсилон:</p>
+        <div id="inputs2"><input type="number" id="e1" placeholder=" &#949 = 0.1"onblur="applySetting()"/></div>
+        <p>Выберите функцию:
+        </p>
+        <div id="functions">
+            <button class="inputButtons" id="ex" onclick="changeOnEx()">e<sup><small>x</small></sup></button>
+            <button class="inputButtons" id="x2" onclick="changeOnPar()">x<sup><small>2</small></sup></button>
+            <button class="inputButtons" id="x3" onclick="changeOnPar3()">x<sup><small>3</small></sup></button>
+            <button class="inputButtons" id="-x2" onclick="changeOnMinusPar()">-x<sup><small>2</small></sup></button>
+            <button class="inputButtons" id="x2ex" onclick="changeOnSome()">x<sup><small>2</small></sup>e<sup><small>x</small></sup></button>
+        </div>
+        <div id="controls">
+            <button class="inputButtons" id="prevStep" onclick="stepPrev()"><</button>
+            <button class="inputButtons" id="nextStep" onclick="nextStep()">></button>
+            <button class="inputButtons" id="stop" onclick="stopDraw()">||</button>
+            <button class="inputButtons" id="start" onclick="startDraw()">>></button>
+        </div>
+        <p>На клавиши Q/E можно отдалять и приближать</p>
+        <p>Количество шагов: <span id="count">1</span></p>
+        <p>Максимальное приближение: <span id="pribl">0</span></p>
+      </div>
+      <button id="close" onclick="inout()">X</button>
+    </div>
+    <script src="js/loman.js"></script>
+  </body>
+</html>
