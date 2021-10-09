@@ -36,7 +36,7 @@ function isPartiallyVisible(el) {
   var bottom = elementBoundary.bottom;
   var height = elementBoundary.height;
 
-  return (((top + height) / 2 >= 0) && ((height + window.innerHeight) / 2 >= bottom));
+  return ((top + height>= 0) && (height + window.innerHeight>= bottom));
 }
 
 function isFullyVisible(el) {

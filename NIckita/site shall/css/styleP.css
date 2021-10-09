@@ -10,12 +10,11 @@
 
 html,
 body {
-  min-height: 66.7vh;
+  min-height: 100vh;
 }
 html {
   overflow-x: hidden;
   background-color: #202020;
-  zoom: 150%;
 }
 
 body {
