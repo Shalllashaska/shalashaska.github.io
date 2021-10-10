@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styleGameOfLife.css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>GameOfLife</title>
+  </head>
+  <body>
+    <center>
+      <canvas id="can" width="800" height="800"></canvas>
+    </center>
+    <div class="wrapper">
+      <div class="inputs">
+        <p>B</p>
+        <input type="number" id="b" value="3" />
+        <p>S</p>
+        <input type="number" id="s" value="23" />
+        <p>Time</p>
+        <input type="number" id="t" value="250" />
+      </div>
+      <div class="buttons">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="nextStep">Next Step</button>
+        <button id="clear">Clear</button>
+      </div>
+      <div class="textAll">
+        <p id="pop">Population: <span id="popS">0</span></p>
+        <p id="gen">Generation: <span id="genS">0</span></p>
+        <br />
+        <br />
+        <p>Рисовать с помощью мыши, стирать клеточки можно при зажимании E</p>
+
+      </div>
+    </div>
+    <script src="js/gameoflife.js"></script>
+  </body>
+</html>

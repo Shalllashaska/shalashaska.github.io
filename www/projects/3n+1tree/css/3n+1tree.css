@@ -1,0 +1,109 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+#content {
+  justify-content: center;
+  align-items: center;
+}
+#can {
+  background: rgb(185, 95, 212);
+  background: linear-gradient(
+    90deg,
+    rgb(185, 94, 212) 0%,
+    rgb(255, 104, 216) 12%,
+    rgb(242, 191, 232) 93%
+  );
+}
+
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display: flex;
+}
+
+#start-menu {
+  margin-top: 40px;
+  background: rgb(162, 122, 166);
+  background: linear-gradient(
+    167deg,
+    rgba(162, 122, 166, 1) 0%,
+    rgba(130, 19, 233, 1) 100%
+  );
+  width: 1500px;
+  height: 800px;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  color: #170129;
+  user-select: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+  width: 50px;
+  height: 45px;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(107, 214, 105);
+  background: linear-gradient(
+    310deg,
+    rgba(107, 214, 105, 1) 0%,
+    rgba(22, 238, 232, 1) 100%
+  );
+  border: none;
+  border-radius: 10%;
+  outline: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:focus {
+  -webkit-box-shadow: 4px -2px 31px 0px rgba(34, 60, 80, 0.33);
+  -moz-box-shadow: 4px -2px 31px 0px rgba(34, 60, 80, 0.33);
+  box-shadow: 4px -2px 31px 0px rgba(34, 60, 80, 0.33);
+}
+.but {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#start {
+  width: 150px;
+  height: 50px;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(107, 214, 105);
+  background: linear-gradient(
+    310deg,
+    rgba(107, 214, 105, 1) 0%,
+    rgba(22, 238, 232, 1) 100%
+  );
+  border: none;
+  border-radius: 50%;
+}
+
+#start:hover {
+  -webkit-box-shadow: 4px -2px 31px 0px rgba(34, 60, 80, 0.33);
+  -moz-box-shadow: 4px -2px 31px 0px rgba(34, 60, 80, 0.33);
+  box-shadow: 4px -2px 31px 0px rgba(34, 60, 80, 0.33);
+}
+
+#start:active {
+  background: rgb(214, 112, 105);
+  background: linear-gradient(
+    310deg,
+    rgb(214, 136, 105) 0%,
+    rgb(238, 22, 22) 100%
+  );
+}
