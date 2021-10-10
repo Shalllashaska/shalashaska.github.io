@@ -10,20 +10,23 @@
 
 html {
   background-color: #202020;
-  zoom: 150%;
 }
 
 body {
   color: rgb(194, 194, 194);
-  min-height: 100%;
-}
+  min-height: 100vh;
+  font-size: 1.3em;
 
+}
 
 .headerHrefs {
   color: #030303;
 }
 
+
+
 a:hover {
+  font-style: italic;
   background-color: brown;
   transition: all.6s ease;
   -moz-transition: all.6s ease;
@@ -42,35 +45,35 @@ footer {
   background-color: #2e2e2e;
   height: 50px;
   clear: left;
-  font-size: 10px;
+  font-size: .7em;
   color: #8aa7af;
-  margin-top: 54px;
+  margin-top: 50px;
 }
 
 nav {
   display: flex;
   flex-direction: row;
-  width: 450px;
+  width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .headerDiv {
-  width: 150px;
+  width: 250px;
   margin-top: 10px;
   margin-bottom: 10px;
   width: 100%;
   overflow: auto;
 }
-span.side {
-  font-size: 25px;
-}
 
+span.side {
+  font-size: 2em;
+}
 
 .upper {
   position: relative;
   z-index: 2;
-  width: 450px;
+  width: 600px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 25px;
@@ -78,23 +81,13 @@ span.side {
   color: rgb(212, 212, 212);
   text-align: justify;
   opacity: 1;
+  font-size: 1.5em;
 }
 
 .upper::after {
   content: "";
   display: inline-block;
   width: 100%;
-}
-
-
-.anim{
-  opacity: 1;
-  transform: translate(0px, 0px);
-  transition: ease-in 0.6s;
-}
-
-.toogleUp{
-  display: none;
 }
 
 .headerDiv.right {
@@ -106,11 +99,10 @@ span.side {
 }
 
 #wordsFirst {
-  
   display: flex;
-  height: 150px;
-  width: 450px;
-  margin-top: 100px;
+  height: 200px;
+  width: 600px;
+  margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
   flex-direction: row;
@@ -121,33 +113,33 @@ span.side {
 }
 
 #wordsFirst div.left {
-  margin-right: 50px;
+  margin-right: 100px;
 }
 
 #wordsFirst div.right, #wordsFirst div.left {
-  width: 200px;
-  width: 100%;
+  width: 250px;
+  
 }
 
 #wordsFirst div.down div, #wordsFirst div.up div  {
   display: inline-block;
-  width: 200px;
+  width: 250px;
   text-align: justify;
   text-align-last: justify;
 }
 
 #welcome {
   text-align: justify;
-  width: 450px;
+  width: 600px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 90px;
   overflow: auto;
-  font-size: 30px;
+  font-size: 1.7em;
 }
 
 #welcome span {
-  font-size: 40px;
+  font-size: 2em;
 }
 
 #welcome::after {
@@ -176,66 +168,74 @@ footer span{
 }
 
 
+.content{
+  min-height: calc(100vh - 175px);
+}
+
 /* Для мобильной версии, хедер, заголовок , первая секция, привествие и новости*/
 
 @media screen and (max-width: 700px) {
+
+  
+
   header{
-    height: 35px;
+    height: 40px;
   }
 
   nav{
-    width: 210px;
+    width: 300px;
   }
 
   .headerDiv{
-    width: 70px;
+    width: 100px;
     margin-top: 7px;
     margin-bottom: 7px;
-    font-size: 10px;
+    font-size: 0.7em;
   }
 
   span.side {
-    font-size: 15px;
+    font-size: 2em;
   }
 
   .upper {
-    font-size: 10px;
-    width: 210px;
+    font-size: 0.7em;
+    width: 300px;
     margin-top: 20px;
   }
 
   #wordsFirst {
-    height: 120px;
-    width: 210px;
+    height: 200px;
+    width: 300px;
     margin-top: 50px;
   }
 
   #wordsFirst div.left {
-    margin-right: 30px;
+    margin-right: 60px;
     
   }
 
   #wordsFirst div.right, #wordsFirst div.left {
-    width: 90px;
+    width: 120px;
     
   }
   
   #wordsFirst div.down div, #wordsFirst div.up div  {
-    width: 90px;
-    font-size: 8px;
+    width: 120px;
+    font-size: 0.7em;
   }
 
   #welcome {
-    width: 210px;
+    width: 300px;
     margin-top: 70px;
-    font-size: 20px;
+    font-size: 1.5em;
   }
   
   #welcome span {
-    font-size: 30px;
+    font-size: 2em;
   }
 
-  
-
+  .content{
+    min-height: calc(100vh - 160px);
+  }
 }
   
