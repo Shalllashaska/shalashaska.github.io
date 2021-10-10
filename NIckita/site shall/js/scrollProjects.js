@@ -14,7 +14,7 @@ function throttleScroll(e) {
 
 document.addEventListener("DOMContentLoaded", scrolling, false);
 
-var listItems = document.querySelectorAll(".content");
+var listItems = document.querySelectorAll(".contentBar");
 
 
 function scrolling(e) {

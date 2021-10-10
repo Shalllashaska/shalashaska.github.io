@@ -105,7 +105,7 @@ footer span {
 
 .namePage {
   margin: 0 auto;
-  width: 450px;
+  width: 600px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 25px;
@@ -135,15 +135,15 @@ footer span {
   transform: translate(0px, 0px);
 }
 
-/*Content*/
+/*content*/
 
-.content {
+.contentBar {
   display: flex;
   box-sizing: border-box;
   position: relative;
-  width: 80%;
-  height: 150px;
-  margin-top: 20px;
+  width: 600px;
+  height: 200px;
+  margin-top: 24px;
   margin-left: auto;
   margin-right: auto;
   flex-wrap: nowrap;
@@ -151,48 +151,54 @@ footer span {
   transition-timing-function: ease-out;
 }
 
-/*Content img*/
+/*content img*/
 
-.content .img {
+.contentBar .img {
   box-sizing: border-box;
-  width: 150px;
+  width: 200px;
   height: inherit;
 }
 
-/*Content text*/
+/*content text*/
 
-.content .text {
+.contentBar .text {
+  padding: 24px 18px 18px 24px;
   box-sizing: border-box;
   height: inherit;
   width: calc(100% - 200px);
   background-color: #313131;;
 }
 
-.content .text p {
-  font-size: 20px;
+.contentBar .text p {
+  color: #678e99;
+  font-size: 1.1em;
   font-weight: 600;
+  margin-bottom: 14px;
 }
 
-.content .text span {
-  font-size: 20px;
-  font-weight: lighter;
+.contentBar .text span {
+  font-size: 0.85em;
+  font-weight: 100;
 }
 
 ._left {
   order: -1;
-  margin-right: 50px;
+  margin-right: 18px;
 }
 
 ._right {
   margin-right: 0px;
 }
 
-.content .img a img {
-  width: 150px;
-  height: 150px;
+.contentBar .img a img {
+  width: 200px;
+  height: 200px;
 }
 
-.content .img a img {
-  width: 150px;
-  height: 150px;
+._leftImg{
+  border-radius: 12px 0px 0px 12px;
+}
+
+._rightImg{
+  border-radius: 0px 12px 12px 0px;
 }

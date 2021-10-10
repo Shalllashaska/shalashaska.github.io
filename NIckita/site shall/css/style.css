@@ -81,6 +81,7 @@ span.side {
   color: rgb(212, 212, 212);
   text-align: justify;
   opacity: 1;
+  font-size: 1.5em;
 }
 
 .upper::after {
