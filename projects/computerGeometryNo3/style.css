@@ -1,0 +1,32 @@
+.wrapper{
+    position: relative;
+    background-color: aqua;
+    width: 150px;
+    height: 250px;
+    display: flexbox;
+    flex-direction: column;
+    
+}
+
+
+input{
+    width: 100px;
+    padding: 0;
+    margin-top: 10px;
+    margin-left: 23px;
+ 
+    height: 20px;
+}
+
+canvas{
+    background-color:bisque;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1000;
+}
+
+button{
+    margin-top: 10px;
+    margin-left: 23px;
+}
