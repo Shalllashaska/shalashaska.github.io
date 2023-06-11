@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styleP.css" rel="stylesheet" type="text/css" />
+    <link href="css/styleL.css" rel="stylesheet" type="text/css" />
+    <title>LEADERBOARD</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="headerDiv left">
+          <a href="projects.html" class="headerHrefs">P R O J E C T S</a>
+        </div>
+        <div class="headerDiv center">
+          <a href="https://github.com/Shalllashaska" class="headerHrefs"
+            >G I T</a
+          >
+        </div>
+        <div class="headerDiv right">
+          <a href="leaderboard.html" class="headerHrefs">LEADERBOARD</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="wrapper">
+      <div class="namePage">L E A D E R B O A R D</div>
+      <div class="namePage">BEST PLAYER</div>
+      <div class="leader-player">
+        first player
+      </div>
+      <div class="logo">
+        <div class="name text-left">N A M E</div>
+        <div class="score text-center">S C O R E</div>
+        <div class="map text-right">M A P</div>
+      </div>
+      <div class="table">
+        <div class="table-item">
+            <div class="name text-left">NAME</div>
+            <div class="score text-center">100000</div>
+            <div class="map text-right">CASTLE</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <span id="fsp">Jaroslavl Souznaya 141</span
+      ><span id="ssp">89764546798</span>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script type="module">
+      const firebaseApp = firebase.initializeApp({
+        apiKey: "AIzaSyCNuCsVrqQmhSQcRyXk4BABlsq3UlzgTSI",
+        authDomain: "unity-zucchini-hell.firebaseapp.com",
+        projectId: "unity-zucchini-hell",
+        storageBucket: "unity-zucchini-hell.appspot.com",
+        messagingSenderId: "653209298934",
+        appId: "1:653209298934:web:e69c5c7c89688962af49d7"
+      });
+
+      window.db = firebaseApp.firestore();
+    </script>
+    <script src="js/leaderboard.js"></script>
+    <script src="js/scrollProjects.js"></script>
+  </body>
+</html>
